@@ -1,6 +1,6 @@
 [package]
 name = "prov-cosmwasm-crypto"
-version = "1.0.0-provbeta2"
+version = "1.0.0-provbeta3"
 authors = ["Fred Kneeland <fkneeland@figure.com>"]
 edition = "2018"
 description = "Crypto bindings for cosmwasm contracts"

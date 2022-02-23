@@ -1,6 +1,6 @@
 [package]
 name = "prov-cosmwasm-schema"
-version = "1.0.0-provbeta2"
+version = "1.0.0-provbeta3"
 authors = ["Fred Kneeland <fkneeland@figure.com>"]
 edition = "2018"
 description = "A dev-dependency for CosmWasm contracts to generate JSON Schema files."
