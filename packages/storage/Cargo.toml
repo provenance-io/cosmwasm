@@ -1,8 +1,8 @@
 [package]
-name = "cosmwasm-storage"
-version = "1.0.0-beta5"
-authors = ["Ethan Frey <ethanfrey@users.noreply.github.com>"]
-edition = "2018"
+name = "prov-cosmwasm-storage"
+version = "1.0.0-provbeta2"
+authors = ["Fred Kneeland <fkneeland@figure.com>"]
+edition = "2022"
 description = "CosmWasm library with useful helpers for Storage patterns"
 repository = "https://github.com/CosmWasm/cosmwasm/tree/main/packages/storage"
 license = "Apache-2.0"

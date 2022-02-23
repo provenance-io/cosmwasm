@@ -1,8 +1,8 @@
 [package]
-name = "cosmwasm-crypto"
-version = "1.0.0-beta5"
-authors = ["Mauro Lacy <maurolacy@users.noreply.github.com>"]
-edition = "2018"
+name = "prov-cosmwasm-crypto"
+version = "1.0.0-provbeta2"
+authors = ["Fred Kneeland <fkneeland@figure.com>"]
+edition = "2022"
 description = "Crypto bindings for cosmwasm contracts"
 repository = "https://github.com/CosmWasm/cosmwasm/tree/main/packages/crypto"
 license = "Apache-2.0"
