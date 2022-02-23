@@ -2,9 +2,9 @@
 name = "prov-cosmwasm-profiler"
 version = "1.0.0-provbeta2"
 authors = ["Fred Kneeland <fkneeland@figure.com>"]
-edition = "2022"
+edition = "2018"
 description = "A profiling utility for compiled Cosmwasm smart contracts"
-repository = "https://github.com/CosmWasm/cosmwasm/tree/main/packages/profiler"
+repository = "https://github.com/provenance-io/cosmwasm/tree/main/packages/profiler"
 license = "Apache-2.0"
 readme = "README.md"
 publish = false

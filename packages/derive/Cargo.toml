@@ -2,9 +2,9 @@
 name = "prov-cosmwasm-derive"
 version = "1.0.0-provbeta2"
 authors = ["Fred Kneeland <fkneeland@figure.com>"]
-edition = "2022"
+edition = "2018"
 description = "A package for auto-generated code used for CosmWasm contract development. This is shipped as part of cosmwasm-std. Do not use directly."
-repository = "https://github.com/CosmWasm/cosmwasm/tree/main/packages/derive"
+repository = "https://github.com/provenance-io/cosmwasm/tree/main/packages/derive"
 license = "Apache-2.0"
 readme = "README.md"
 
