@@ -3,7 +3,7 @@ use std::{
     sync::{Arc, Mutex},
 };
 
-use cosmwasm_vm::{
+use prov_cosmwasm_vm::{
     testing::{MockApi, MockQuerier, MockStorage},
     Backend, Instance,
 };
@@ -60,7 +60,7 @@ impl<'d> Module<'d> {
         //let wasmer_module = wasmer::Module::new(&store, wasm).unwrap();
 
         let wasmer_module =
-            cosmwasm_vm::internals::compile(&wasm, None, &[profiling.clone()]).unwrap();
+            prov_cosmwasm_vm::internals::compile(&wasm, None, &[profiling.clone()]).unwrap();
         let store = wasmer_module.store();
 
         // Mock imports that do nothing.
@@ -79,7 +79,7 @@ impl<'d> Module<'d> {
             storage: MockStorage::default(),
             querier: MockQuerier::new(&[]),
         };
-        let instance = cosmwasm_vm::internals::instance_from_module(
+        let instance = prov_cosmwasm_vm::internals::instance_from_module(
             &wasmer_module,
             backend,
             999999999,

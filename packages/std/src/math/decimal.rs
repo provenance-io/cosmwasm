@@ -62,7 +62,7 @@ impl Decimal {
     /// ## Examples
     ///
     /// ```
-    /// # use cosmwasm_std::{Decimal, Uint128};
+    /// # use prov_cosmwasm_std::{Decimal, Uint128};
     /// let a = Decimal::from_atomics(Uint128::new(1234), 3).unwrap();
     /// assert_eq!(a.to_string(), "1.234");
     ///
@@ -127,7 +127,7 @@ impl Decimal {
     /// ## Examples
     ///
     /// ```
-    /// # use cosmwasm_std::{Decimal, Uint128};
+    /// # use prov_cosmwasm_std::{Decimal, Uint128};
     /// # use std::str::FromStr;
     /// // Value with whole and fractional part
     /// let a = Decimal::from_str("1.234").unwrap();

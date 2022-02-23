@@ -12,7 +12,7 @@ license = "Apache-2.0"
 [features]
 default = ["iterator"]
 # This enables iterator functionality, as exposed in cosmwasm-std/iterator
-iterator = ["cosmwasm-std/iterator"]
+iterator = ["prov-cosmwasm-std/iterator"]
 
 [dependencies]
 # Uses the path when built locally; uses the given version from crates.io when published

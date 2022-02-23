@@ -7,8 +7,8 @@ mod utils;
 
 use std::sync::{Arc, Mutex};
 
-use cosmwasm_std::{coins, Response};
-use cosmwasm_vm::{
+use prov_cosmwasm_std::{coins, Response};
+use prov_cosmwasm_vm::{
     testing::{instantiate, mock_env, mock_info, query, MockApi, MockQuerier, MockStorage},
     Instance,
 };

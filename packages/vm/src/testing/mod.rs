@@ -1,4 +1,4 @@
-// The external interface is `use cosmwasm_vm::testing::X` for all integration testing symbols, no matter where they live internally.
+// The external interface is `use prov_cosmwasm_vm::testing::X` for all integration testing symbols, no matter where they live internally.
 
 mod calls;
 mod instance;

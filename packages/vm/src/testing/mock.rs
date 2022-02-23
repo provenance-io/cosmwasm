@@ -1,5 +1,5 @@
-use cosmwasm_std::testing::{digit_sum, riffle_shuffle};
-use cosmwasm_std::{
+use prov_cosmwasm_std::testing::{digit_sum, riffle_shuffle};
+use prov_cosmwasm_std::{
     Addr, BlockInfo, Coin, ContractInfo, Env, MessageInfo, Timestamp, TransactionInfo,
 };
 
@@ -182,7 +182,7 @@ pub fn mock_info(sender: &str, funds: &[Coin]) -> MessageInfo {
 mod tests {
     use super::*;
     use crate::BackendError;
-    use cosmwasm_std::coins;
+    use prov_cosmwasm_std::coins;
 
     #[test]
     fn mock_info_works() {

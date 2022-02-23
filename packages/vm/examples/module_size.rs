@@ -4,9 +4,9 @@ use std::mem;
 
 use clap::{App, Arg};
 
-use cosmwasm_vm::internals::compile;
-use cosmwasm_vm::internals::make_runtime_store;
-use cosmwasm_vm::Size;
+use prov_cosmwasm_vm::internals::compile;
+use prov_cosmwasm_vm::internals::make_runtime_store;
+use prov_cosmwasm_vm::Size;
 use wasmer::Module;
 
 pub fn main() {

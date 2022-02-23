@@ -229,109 +229,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "245097e9a4535ee1e3e3931fcfcd55a796a44c643e8596ff6566d68f09b87bbc"
 
 [[package]]
-name = "cosmwasm-crypto"
-version = "1.0.0-beta5"
-dependencies = [
- "base64",
- "criterion",
- "digest",
- "ed25519-zebra",
- "elliptic-curve",
- "english-numbers",
- "hex",
- "hex-literal",
- "k256",
- "rand_core 0.5.1",
- "serde",
- "serde_json",
- "sha2",
- "thiserror",
-]
-
-[[package]]
-name = "cosmwasm-derive"
-version = "1.0.0-beta5"
-dependencies = [
- "cosmwasm-std",
- "syn",
-]
-
-[[package]]
-name = "cosmwasm-profiler"
-version = "0.0.0"
-dependencies = [
- "cosmwasm-std",
- "cosmwasm-vm",
- "csv",
- "hackatom",
- "loupe",
- "walrus",
- "wasmer",
- "wasmer-types",
- "wasmer-vm",
-]
-
-[[package]]
-name = "cosmwasm-schema"
-version = "1.0.0-beta5"
-dependencies = [
- "schemars",
- "serde_json",
-]
-
-[[package]]
-name = "cosmwasm-std"
-version = "1.0.0-beta5"
-dependencies = [
- "base64",
- "chrono",
- "cosmwasm-crypto",
- "cosmwasm-derive",
- "cosmwasm-schema",
- "hex",
- "hex-literal",
- "schemars",
- "serde",
- "serde-json-wasm",
- "thiserror",
- "uint",
-]
-
-[[package]]
-name = "cosmwasm-storage"
-version = "1.0.0-beta5"
-dependencies = [
- "cosmwasm-std",
- "serde",
-]
-
-[[package]]
-name = "cosmwasm-vm"
-version = "1.0.0-beta5"
-dependencies = [
- "clap",
- "clru",
- "cosmwasm-crypto",
- "cosmwasm-std",
- "criterion",
- "hex",
- "hex-literal",
- "leb128",
- "loupe",
- "parity-wasm",
- "rand",
- "schemars",
- "serde",
- "serde_json",
- "sha2",
- "tempfile",
- "thiserror",
- "wasmer",
- "wasmer-middlewares",
- "wat",
-]
-
-[[package]]
 name = "cpufeatures"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -818,7 +715,7 @@ dependencies = [
 name = "hackatom"
 version = "0.0.0"
 dependencies = [
- "cosmwasm-std",
+ "prov-cosmwasm-std",
  "rust-argon2",
  "schemars",
  "serde",
@@ -1202,6 +1099,109 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fb37d2df5df740e582f28f8560cf425f52bb267d872fe58358eadb554909f07a"
 dependencies = [
  "unicode-xid",
+]
+
+[[package]]
+name = "prov-cosmwasm-crypto"
+version = "1.0.0-provbeta3"
+dependencies = [
+ "base64",
+ "criterion",
+ "digest",
+ "ed25519-zebra",
+ "elliptic-curve",
+ "english-numbers",
+ "hex",
+ "hex-literal",
+ "k256",
+ "rand_core 0.5.1",
+ "serde",
+ "serde_json",
+ "sha2",
+ "thiserror",
+]
+
+[[package]]
+name = "prov-cosmwasm-derive"
+version = "1.0.0-provbeta3"
+dependencies = [
+ "prov-cosmwasm-std",
+ "syn",
+]
+
+[[package]]
+name = "prov-cosmwasm-profiler"
+version = "1.0.0-provbeta3"
+dependencies = [
+ "csv",
+ "hackatom",
+ "loupe",
+ "prov-cosmwasm-std",
+ "prov-cosmwasm-vm",
+ "walrus",
+ "wasmer",
+ "wasmer-types",
+ "wasmer-vm",
+]
+
+[[package]]
+name = "prov-cosmwasm-schema"
+version = "1.0.0-provbeta3"
+dependencies = [
+ "schemars",
+ "serde_json",
+]
+
+[[package]]
+name = "prov-cosmwasm-std"
+version = "1.0.0-provbeta3"
+dependencies = [
+ "base64",
+ "chrono",
+ "hex",
+ "hex-literal",
+ "prov-cosmwasm-crypto",
+ "prov-cosmwasm-derive",
+ "prov-cosmwasm-schema",
+ "schemars",
+ "serde",
+ "serde-json-wasm",
+ "thiserror",
+ "uint",
+]
+
+[[package]]
+name = "prov-cosmwasm-storage"
+version = "1.0.0-provbeta3"
+dependencies = [
+ "prov-cosmwasm-std",
+ "serde",
+]
+
+[[package]]
+name = "prov-cosmwasm-vm"
+version = "1.0.0-provbeta2"
+dependencies = [
+ "clap",
+ "clru",
+ "criterion",
+ "hex",
+ "hex-literal",
+ "leb128",
+ "loupe",
+ "parity-wasm",
+ "prov-cosmwasm-crypto",
+ "prov-cosmwasm-std",
+ "rand",
+ "schemars",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "thiserror",
+ "wasmer",
+ "wasmer-middlewares",
+ "wat",
 ]
 
 [[package]]

@@ -3,9 +3,9 @@ use std::ops::AddAssign;
 use std::string::FromUtf8Error;
 use thiserror::Error;
 
-use cosmwasm_std::{Binary, ContractResult, SystemResult};
+use prov_cosmwasm_std::{Binary, ContractResult, SystemResult};
 #[cfg(feature = "iterator")]
-use cosmwasm_std::{Order, Record};
+use prov_cosmwasm_std::{Order, Record};
 
 /// A structure that represents gas cost to be deducted from the remaining gas.
 /// This is always needed when computations are performed outside of
@@ -15,7 +15,7 @@ pub struct GasInfo {
     /// The gas cost of a computation that was executed already but not yet charged.
     ///
     /// This could be renamed to `internally_used` for consistency because it is used inside
-    /// of the `cosmwasm_vm`.
+    /// of the `prov_cosmwasm_vm`.
     pub cost: u64,
     /// Gas that was used and charged externally. This is needed to
     /// adjust the VM's gas limit but does not affect the gas usage.

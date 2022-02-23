@@ -1,7 +1,7 @@
 //! exports exposes the public wasm API
 //!
 //! interface_version_8, allocate and deallocate turn into Wasm exports
-//! as soon as cosmwasm_std is `use`d in the contract, even privately.
+//! as soon as prov_cosmwasm_std is `use`d in the contract, even privately.
 //!
 //! `do_execute`, `do_instantiate`, `do_migrate`, `do_query`, `do_reply`
 //! and `do_sudo` should be wrapped with a extern "C" entry point including
@@ -39,7 +39,7 @@ extern "C" fn requires_staking() -> () {}
 extern "C" fn requires_stargate() -> () {}
 
 /// interface_version_* exports mark which Wasm VM interface level this contract is compiled for.
-/// They can be checked by cosmwasm_vm.
+/// They can be checked by prov_cosmwasm_vm.
 /// Update this whenever the Wasm VM interface breaks.
 #[no_mangle]
 extern "C" fn interface_version_8() -> () {}

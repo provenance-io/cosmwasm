@@ -7,7 +7,7 @@ use std::convert::TryInto;
 use std::ops::{Bound, RangeBounds};
 
 #[cfg(feature = "iterator")]
-use cosmwasm_std::{Order, Record};
+use prov_cosmwasm_std::{Order, Record};
 
 #[cfg(feature = "iterator")]
 use crate::BackendError;

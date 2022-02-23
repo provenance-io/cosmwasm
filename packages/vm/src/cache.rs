@@ -372,7 +372,7 @@ mod tests {
     use crate::errors::VmError;
     use crate::features::features_from_csv;
     use crate::testing::{mock_backend, mock_env, mock_info, MockApi, MockQuerier, MockStorage};
-    use cosmwasm_std::{coins, Empty};
+    use prov_cosmwasm_std::{coins, Empty};
     use std::fs::OpenOptions;
     use std::io::Write;
     use std::iter::FromIterator;

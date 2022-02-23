@@ -56,7 +56,7 @@ where
     Q: Querier + 'static, // 'static is needed here to allow using this in an Environment that is cloned into closures
 {
     /// This is the only Instance constructor that can be called from outside of cosmwasm-vm,
-    /// e.g. in test code that needs a customized variant of cosmwasm_vm::testing::mock_instance*.
+    /// e.g. in test code that needs a customized variant of prov_cosmwasm_vm::testing::mock_instance*.
     pub fn from_code(
         code: &[u8],
         backend: Backend<A, S, Q>,
@@ -188,7 +188,7 @@ where
         // Creates an iterator that will go from start to end.
         // If start_ptr == 0, the start is unbounded.
         // If end_ptr == 0, the end is unbounded.
-        // Order is defined in cosmwasm_std::Order and may be 1 (ascending) or 2 (descending). All other values result in an error.
+        // Order is defined in prov_cosmwasm_std::Order and may be 1 (ascending) or 2 (descending). All other values result in an error.
         // Ownership of both start and end pointer is not transferred to the host.
         // Returns an iterator ID.
         #[cfg(feature = "iterator")]
@@ -387,7 +387,7 @@ mod tests {
         mock_instance_with_balances, mock_instance_with_failing_api, mock_instance_with_gas_limit,
         mock_instance_with_options, MockInstanceOptions,
     };
-    use cosmwasm_std::{
+    use prov_cosmwasm_std::{
         coin, coins, from_binary, AllBalanceResponse, BalanceResponse, BankQuery, Empty,
         QueryRequest,
     };

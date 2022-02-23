@@ -26,8 +26,8 @@ Since we have different types for `Storage` and `ReadonlyStorage`, we use two
 different constructors:
 
 ```rust
-use cosmwasm_std::testing::MockStorage;
-use cosmwasm_storage::{prefixed, prefixed_read};
+use prov_cosmwasm_std::testing::MockStorage;
+use prov_cosmwasm_storage::{prefixed, prefixed_read};
 
 let mut store = MockStorage::new();
 
@@ -64,8 +64,8 @@ Note that `TypedStorage` itself does not implement the `Storage` interface, so
 when combining with `PrefixStorage`, make sure to wrap the prefix first.
 
 ```rust
-use cosmwasm_std::testing::MockStorage;
-use cosmwasm_storage::{prefixed, typed};
+use prov_cosmwasm_std::testing::MockStorage;
+use prov_cosmwasm_storage::{prefixed, typed};
 
 let mut store = MockStorage::new();
 let mut space = prefixed(b"data", &mut store);
@@ -117,9 +117,9 @@ often combined into a `Bucket`. A Bucket works just like the example above,
 except the creation can be in another function:
 
 ```rust
-use cosmwasm_std::StdResult;
-use cosmwasm_std::testing::MockStorage;
-use cosmwasm_storage::{bucket, Bucket};
+use prov_cosmwasm_std::StdResult;
+use prov_cosmwasm_std::testing::MockStorage;
+use prov_cosmwasm_storage::{bucket, Bucket};
 
 fn people<'a, S: Storage>(storage: &'a mut S) -> Bucket<'a, S, Data> {
     bucket(b"people", storage)
@@ -150,10 +150,10 @@ Please note that in this context, the term "singleton" does not refer to
 container for a single element.
 
 ```rust
-use cosmwasm_std::{Coin, coin, StdResult};
-use cosmwasm_std::testing::MockStorage;
+use prov_cosmwasm_std::{Coin, coin, StdResult};
+use prov_cosmwasm_std::testing::MockStorage;
 
-use cosmwasm_storage::{singleton};
+use prov_cosmwasm_storage::{singleton};
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct Config {

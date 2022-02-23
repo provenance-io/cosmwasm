@@ -3,15 +3,15 @@
 use std::cmp::max;
 use std::convert::TryInto;
 
-use cosmwasm_crypto::{
+use prov_cosmwasm_crypto::{
     ed25519_batch_verify, ed25519_verify, secp256k1_recover_pubkey, secp256k1_verify, CryptoError,
 };
-use cosmwasm_crypto::{
+use prov_cosmwasm_crypto::{
     ECDSA_PUBKEY_MAX_LEN, ECDSA_SIGNATURE_LEN, EDDSA_PUBKEY_LEN, MESSAGE_HASH_MAX_LEN,
 };
 
 #[cfg(feature = "iterator")]
-use cosmwasm_std::Order;
+use prov_cosmwasm_std::Order;
 
 use crate::backend::{BackendApi, BackendError, Querier, Storage};
 use crate::conversion::{ref_to_u32, to_u32};
@@ -434,7 +434,7 @@ fn to_low_half(data: u32) -> u64 {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use cosmwasm_std::{
+    use prov_cosmwasm_std::{
         coins, from_binary, AllBalanceResponse, BankQuery, Binary, Empty, QueryRequest,
         SystemError, SystemResult, WasmQuery,
     };
@@ -1649,7 +1649,7 @@ mod tests {
         let request: QueryRequest<Empty> = QueryRequest::Bank(BankQuery::AllBalances {
             address: INIT_ADDR.to_string(),
         });
-        let request_data = cosmwasm_std::to_vec(&request).unwrap();
+        let request_data = prov_cosmwasm_std::to_vec(&request).unwrap();
         let request_ptr = write_data(&env, &request_data);
 
         leave_default_data(&env);
@@ -1657,8 +1657,8 @@ mod tests {
         let response_ptr = do_query_chain(&env, request_ptr).unwrap();
         let response = force_read(&env, response_ptr);
 
-        let query_result: cosmwasm_std::QuerierResult =
-            cosmwasm_std::from_slice(&response).unwrap();
+        let query_result: prov_cosmwasm_std::QuerierResult =
+            prov_cosmwasm_std::from_slice(&response).unwrap();
         let query_result_inner = query_result.unwrap();
         let query_result_inner_inner = query_result_inner.unwrap();
         let parsed_again: AllBalanceResponse = from_binary(&query_result_inner_inner).unwrap();
@@ -1678,8 +1678,8 @@ mod tests {
         let response_ptr = do_query_chain(&env, request_ptr).unwrap();
         let response = force_read(&env, response_ptr);
 
-        let query_result: cosmwasm_std::QuerierResult =
-            cosmwasm_std::from_slice(&response).unwrap();
+        let query_result: prov_cosmwasm_std::QuerierResult =
+            prov_cosmwasm_std::from_slice(&response).unwrap();
         match query_result {
             SystemResult::Ok(_) => panic!("This must not succeed"),
             SystemResult::Err(SystemError::InvalidRequest { request: err, .. }) => {
@@ -1698,7 +1698,7 @@ mod tests {
             contract_addr: String::from("non-existent"),
             msg: Binary::from(b"{}" as &[u8]),
         });
-        let request_data = cosmwasm_std::to_vec(&request).unwrap();
+        let request_data = prov_cosmwasm_std::to_vec(&request).unwrap();
         let request_ptr = write_data(&env, &request_data);
 
         leave_default_data(&env);
@@ -1706,8 +1706,8 @@ mod tests {
         let response_ptr = do_query_chain(&env, request_ptr).unwrap();
         let response = force_read(&env, response_ptr);
 
-        let query_result: cosmwasm_std::QuerierResult =
-            cosmwasm_std::from_slice(&response).unwrap();
+        let query_result: prov_cosmwasm_std::QuerierResult =
+            prov_cosmwasm_std::from_slice(&response).unwrap();
         match query_result {
             SystemResult::Ok(_) => panic!("This must not succeed"),
             SystemResult::Err(SystemError::NoSuchContract { addr }) => {

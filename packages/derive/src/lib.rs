@@ -10,7 +10,7 @@ use std::str::FromStr;
 /// It should be added to the contract's init, handle, migrate and query implementations
 /// like this:
 /// ```
-/// # use cosmwasm_std::{
+/// # use prov_cosmwasm_std::{
 /// #     Storage, Api, Querier, DepsMut, Deps, entry_point, Env, StdError, MessageInfo,
 /// #     Response, QueryResponse,
 /// # };
@@ -70,7 +70,7 @@ pub fn entry_point(_attr: TokenStream, mut item: TokenStream) -> TokenStream {
         mod __wasm_export_{name} {{ // new module to avoid conflict of function name
             #[no_mangle]
             extern "C" fn {name}({typed_ptrs}) -> u32 {{
-                cosmwasm_std::do_{name}(&super::{name}, {ptrs})
+                prov_cosmwasm_std::do_{name}(&super::{name}, {ptrs})
             }}
         }}
     "##,

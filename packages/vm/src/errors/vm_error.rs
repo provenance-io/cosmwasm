@@ -3,7 +3,7 @@ use std::backtrace::Backtrace;
 use std::fmt::{Debug, Display};
 use thiserror::Error;
 
-use cosmwasm_crypto::CryptoError;
+use prov_cosmwasm_crypto::CryptoError;
 
 use super::communication_error::CommunicationError;
 use crate::backend::BackendError;

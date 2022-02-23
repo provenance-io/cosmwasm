@@ -159,7 +159,7 @@ impl Api for MockApi {
         signature: &[u8],
         public_key: &[u8],
     ) -> Result<bool, VerificationError> {
-        Ok(cosmwasm_crypto::secp256k1_verify(
+        Ok(prov_cosmwasm_crypto::secp256k1_verify(
             message_hash,
             signature,
             public_key,
@@ -173,7 +173,7 @@ impl Api for MockApi {
         recovery_param: u8,
     ) -> Result<Vec<u8>, RecoverPubkeyError> {
         let pubkey =
-            cosmwasm_crypto::secp256k1_recover_pubkey(message_hash, signature, recovery_param)?;
+            prov_cosmwasm_crypto::secp256k1_recover_pubkey(message_hash, signature, recovery_param)?;
         Ok(pubkey.to_vec())
     }
 
@@ -183,7 +183,7 @@ impl Api for MockApi {
         signature: &[u8],
         public_key: &[u8],
     ) -> Result<bool, VerificationError> {
-        Ok(cosmwasm_crypto::ed25519_verify(
+        Ok(prov_cosmwasm_crypto::ed25519_verify(
             message, signature, public_key,
         )?)
     }
@@ -194,7 +194,7 @@ impl Api for MockApi {
         signatures: &[&[u8]],
         public_keys: &[&[u8]],
     ) -> Result<bool, VerificationError> {
-        Ok(cosmwasm_crypto::ed25519_batch_verify(
+        Ok(prov_cosmwasm_crypto::ed25519_batch_verify(
             messages,
             signatures,
             public_keys,

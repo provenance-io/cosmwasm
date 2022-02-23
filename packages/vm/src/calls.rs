@@ -1,9 +1,9 @@
 use serde::de::DeserializeOwned;
 use wasmer::Val;
 
-use cosmwasm_std::{ContractResult, CustomMsg, Env, MessageInfo, QueryResponse, Reply, Response};
+use prov_cosmwasm_std::{ContractResult, CustomMsg, Env, MessageInfo, QueryResponse, Reply, Response};
 #[cfg(feature = "stargate")]
-use cosmwasm_std::{
+use prov_cosmwasm_std::{
     IbcBasicResponse, IbcChannelCloseMsg, IbcChannelConnectMsg, IbcChannelOpenMsg, IbcPacketAckMsg,
     IbcPacketReceiveMsg, IbcPacketTimeoutMsg, IbcReceiveResponse,
 };
@@ -591,7 +591,7 @@ where
 mod tests {
     use super::*;
     use crate::testing::{mock_env, mock_info, mock_instance};
-    use cosmwasm_std::{coins, Empty};
+    use prov_cosmwasm_std::{coins, Empty};
 
     static CONTRACT: &[u8] = include_bytes!("../testdata/hackatom.wasm");
 
@@ -676,11 +676,11 @@ mod tests {
         use crate::testing::{
             mock_env, mock_info, mock_instance, MockApi, MockQuerier, MockStorage,
         };
-        use cosmwasm_std::testing::{
+        use prov_cosmwasm_std::testing::{
             mock_ibc_channel_close_init, mock_ibc_channel_connect_ack, mock_ibc_channel_open_init,
             mock_ibc_packet_ack, mock_ibc_packet_recv, mock_ibc_packet_timeout, mock_wasmd_attr,
         };
-        use cosmwasm_std::{
+        use prov_cosmwasm_std::{
             Empty, Event, IbcAcknowledgement, IbcOrder, Reply, ReplyOn, SubMsgExecutionResponse,
         };
         static CONTRACT: &[u8] = include_bytes!("../testdata/ibc_reflect.wasm");

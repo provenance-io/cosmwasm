@@ -3,8 +3,8 @@ use std::io::Read;
 
 use clap::{App, Arg};
 
-use cosmwasm_vm::features_from_csv;
-use cosmwasm_vm::internals::{check_wasm, compile};
+use prov_cosmwasm_vm::features_from_csv;
+use prov_cosmwasm_vm::internals::{check_wasm, compile};
 
 const DEFAULT_SUPPORTED_FEATURES: &str = "iterator,staking,stargate";
 

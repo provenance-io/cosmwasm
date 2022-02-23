@@ -1,12 +1,12 @@
 //! This file has some helpers for integration tests.
 //! They should be imported via full path to ensure there is no confusion
-//! use cosmwasm_vm::testing::X
+//! use prov_cosmwasm_vm::testing::X
 use schemars::JsonSchema;
 use serde::{de::DeserializeOwned, Serialize};
 
-use cosmwasm_std::{ContractResult, CustomMsg, Env, MessageInfo, QueryResponse, Reply, Response};
+use prov_cosmwasm_std::{ContractResult, CustomMsg, Env, MessageInfo, QueryResponse, Reply, Response};
 #[cfg(feature = "stargate")]
-use cosmwasm_std::{
+use prov_cosmwasm_std::{
     IbcBasicResponse, IbcChannelCloseMsg, IbcChannelConnectMsg, IbcChannelOpenMsg, IbcPacketAckMsg,
     IbcPacketReceiveMsg, IbcPacketTimeoutMsg, IbcReceiveResponse,
 };

@@ -2,9 +2,9 @@ use std::sync::Arc;
 use std::thread;
 use tempfile::TempDir;
 
-use cosmwasm_std::{coins, Empty};
-use cosmwasm_vm::testing::{mock_backend, mock_env, mock_info, MockApi, MockQuerier, MockStorage};
-use cosmwasm_vm::{
+use prov_cosmwasm_std::{coins, Empty};
+use prov_cosmwasm_vm::testing::{mock_backend, mock_env, mock_info, MockApi, MockQuerier, MockStorage};
+use prov_cosmwasm_vm::{
     call_execute, call_instantiate, features_from_csv, Cache, CacheOptions, InstanceOptions, Size,
 };
 
