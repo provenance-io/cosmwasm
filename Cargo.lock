@@ -1180,7 +1180,7 @@ dependencies = [
 
 [[package]]
 name = "prov-cosmwasm-vm"
-version = "1.0.0-provbeta2"
+version = "1.0.0-provbeta3"
 dependencies = [
  "clap",
  "clru",
